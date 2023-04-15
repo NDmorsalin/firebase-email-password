@@ -6,7 +6,7 @@ import { auth } from "../../../firebase.config";
 
 const Header = () => {
   const { user, setUser } = useAuth();
-
+  console.log(user?.user ,{ from: "Header" });
   const logout = async () => {
     try {
       await signOut(auth);
@@ -27,7 +27,7 @@ const Header = () => {
         </Link>
         {user ? (
           <>
-            <h1 className="">Email :{user.email}</h1>
+            <Link to='/update'> update Profile </Link>
             <button
               onClick={logout}
               className="bg-blue-500 text-white rounded-md px-2 py-1"
@@ -46,6 +46,15 @@ const Header = () => {
           </div>
         )}
       </div>
+
+      {
+        user && (<div className="flex items-center gap-3">
+            <h4 className="text-xl">{user?.displayName}</h4>
+            <div className="w-8 h-8 rounded-full border border-emerald-400 p-1"> 
+                <img src={user?.photoURL} alt="avater" className="w-full object-cover rounded-full" />
+            </div>
+        </div>)
+      }
     </div>
   );
 };

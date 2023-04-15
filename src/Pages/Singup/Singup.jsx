@@ -17,8 +17,8 @@ const Singup = () => {
       password
     );
 
-    console.log(currenUsr);
-    setUser(currenUsr);
+    console.log(currenUsr.user);
+    setUser(currenUsr.user);
 
   };
 

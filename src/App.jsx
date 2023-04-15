@@ -9,7 +9,7 @@ import { useAuth } from "./context/AuthContext";
 function App() {
   // const [user, setUser] = useState(0);
   const { user, setUser } = useAuth();
-  console.log(user);
+  
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -26,7 +26,7 @@ function App() {
     });
 
     return () => observer();
-  }, []);
+  }, [user]);
 
   return (
     <div className="container mx-auto px-8">

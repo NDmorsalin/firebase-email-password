@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Singup from "./Pages/Singup/Singup";
 import { AuthProvider } from "./context/AuthContext";
+import UpdateUser from "./Pages/UpdateUser/UpdateUser";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Singup />,
+      },
+      {
+        path: "/update",
+        element: <UpdateUser  />,
       },
     ],
   },
